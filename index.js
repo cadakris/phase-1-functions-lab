@@ -14,13 +14,27 @@ function distanceFromHqInFeet (num) {
 function distanceTravelledInFeet (start, end) {
     return Math.abs((end - start) * 264);
 }
-
+/*
 function calculatesFarePrice(start, end) {
     let n = distanceTravelledInFeet(start, end);
     if (n <= 400) {
         return 0;
     } else if (n > 400 && n < 2000) {
         return (n - 400) *.02;
+    } else if (n > 2000 && n < 2500) {
+        return 25;
+    } else {
+        return 'cannot travel that far';
+    }
+} 
+*/
+
+function calculatesFarePrice(start, end) {
+    let n = (distanceTravelledInFeet(start, end)) - 400;
+    if (n <= 400) {
+        return 0;
+    } else if (n > 400 && n < 2000) {
+        return n *.02;
     } else if (n > 2000 && n < 2500) {
         return 25;
     } else {
